@@ -51,9 +51,10 @@ public class Arena extends AppCompatActivity {
             //Toast.makeText(getApplicationContext(),storedPreference+" false",Toast.LENGTH_LONG).show();
         }
     }
-    public void colorgame(View v){ startActivity(new Intent(Arena.this,ColGameLv.class)); }
+    public void colorgame(View v){
+        startActivity(new Intent(Arena.this,ColGameLv.class)); }
     public void slidegame(View v){
-        startActivity(new Intent(Arena.this,SlideGameL1.class));
+        startActivity(new Intent(Arena.this,SlideGameLv.class));
     }
     public void spinthebottle(View v){
         startActivity(new Intent(Arena.this,SpinTheBottle.class));

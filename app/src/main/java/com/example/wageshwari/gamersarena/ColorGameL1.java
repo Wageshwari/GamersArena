@@ -148,6 +148,7 @@ public class ColorGameL1 extends AppCompatActivity {
 
     public void nextlone(View v) {
         startActivity(new Intent(ColorGameL1.this,ColorGameL2.class));
+        finish();
     }
 
     public void restartl1(View v) {
@@ -169,26 +170,33 @@ public class ColorGameL1 extends AppCompatActivity {
     public void startGame(int in) {
         final int j = in;
         if (in == 16) {
-            int score = preferences.getInt("scrL1", 0);
-            if (scr >= score) {
-                SharedPreferences.Editor editor = preferences.edit();
-                editor.putInt("scrL1", scr); // value to store
-                editor.commit();
-            }
-            if (score>=10) {
-                    nextbut.setVisibility(View.VISIBLE);
-                    congratsback.setVisibility(View.VISIBLE);
-                    restartbut.setVisibility(View.VISIBLE);
-                } else {
-                    restartbut.setVisibility(View.VISIBLE);
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    index = -100;
+                    // vibe=null;
+                    color.setText("");
+                    //  start.setVisibility(View.VISIBLE);
+                    coun=1;
+                    int score = preferences.getInt("scrL1", 0);
+                    if (scr >= score) {
+                        SharedPreferences.Editor editor = preferences.edit();
+                        editor.putInt("scrL1", scr); // value to store
+                        editor.commit();
+                    }
+
+                    if (score>=10||scr>=10) {
+                        nextbut.setVisibility(View.VISIBLE);
+                        congratsback.setVisibility(View.VISIBLE);
+                        restartbut.setVisibility(View.VISIBLE);
+                    } else {
+                        restartbut.setVisibility(View.VISIBLE);
+                    }
                 }
-            index = -100;
-            scr = 0;
-            coun=1;
+            }, 1000);
+
             return;
-
         }
-
       new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {

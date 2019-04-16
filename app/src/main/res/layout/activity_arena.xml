@@ -84,7 +84,7 @@
                     android:layout_height="100dp"
                     android:layout_weight="1"
                     android:onClick="spinthebottle"
-                    app:srcCompat="@drawable/spinbot" />
+                    app:srcCompat="@drawable/spin" />
             </LinearLayout>
 
             <LinearLayout

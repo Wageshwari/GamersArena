@@ -213,7 +213,8 @@ public class ColorGameL3 extends AppCompatActivity {
                 index /= 100;
                 setButtonColors();
                 count.setText("Count: "+j+"/20");
-                color.setText(arrCol.indexOf(arrCol.get(index))+"");
+                //color.setText(arrCol.indexOf(arrCol.get(index))+"");
+                color.setTextSize(0);
                 color.setBackgroundColor(Color.parseColor(arrColId[getColor(arrCol.get(index))]));
                 startGame(j+1);
             }

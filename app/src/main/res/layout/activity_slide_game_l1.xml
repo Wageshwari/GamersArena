@@ -6,18 +6,35 @@
     android:layout_height="match_parent"
     tools:context=".SlideGameL1">
 
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
         android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_centerHorizontal="true" />
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:layout_marginTop="10dp"
             android:orientation="horizontal">
 
-            <Button
+           <Button
                 android:id="@+id/sgl1but1"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
@@ -85,5 +102,92 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1" />
         </LinearLayout>
+
     </LinearLayout>
+    <ImageView
+        android:id="@+id/congosg"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:layout_weight="1"
+        android:scaleType="fitXY"
+        android:visibility="gone"
+        app:srcCompat="@drawable/congo" />
+
+    <ImageView
+        android:id="@+id/nextsgiv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="180dp"
+        android:layout_marginTop="400dp"
+        android:layout_weight="1"
+        android:background="@color/orange"
+        android:visibility="gone"
+        app:srcCompat="@drawable/nextsg" />
+
+    <ImageView
+        android:id="@+id/restartsgiv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="400dp"
+        android:layout_marginLeft="180dp"
+        android:layout_weight="1"
+        android:background="@color/orange"
+        android:visibility="gone"
+        app:srcCompat="@drawable/restratsg" />
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/alertdialog"
+        android:background="@color/white"
+        android:visibility="invisible"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:text="!! TIME OUT !!"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imageView5"
+                android:layout_width="wrap_content"
+                android:layout_marginTop="50dp"
+                android:layout_height="400dp"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/sgsademoji" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/restartad"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/editfield"
+            android:layout_marginBottom="10dp"
+            android:text="RESTART"
+            android:textSize="30dp"
+            android:textStyle="italic" />
+
+        <Button
+            android:id="@+id/quitad"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginBottom="10dp"
+            android:textSize="30dp"
+            android:textStyle="italic"
+            android:background="@drawable/editfield"
+            android:text="QUIT" />
+
+    </LinearLayout>
+
 </RelativeLayout>

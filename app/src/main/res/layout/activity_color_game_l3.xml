@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/colgameback"
+    android:background="@drawable/colgamelv3bkgrnd"
     tools:context=".ColorGameL3">
 
     <ScrollView
@@ -39,13 +39,15 @@
                     android:paddingRight="60dp"
                     android:text="Score:"
                     android:textAlignment="textEnd"
+                    android:layout_gravity="end"
                     android:textColor="@color/black"
                     android:textSize="25dp"
                     android:textStyle="bold" />
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="match_parent"
+                android:layout_width="200dp"
+                android:layout_marginLeft="95dp"
                 android:layout_height="match_parent"
                 android:orientation="horizontal">
 

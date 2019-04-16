@@ -65,7 +65,8 @@
             android:enabled="true"
             android:exported="true" />
 
-        <activity android:name=".ColGameLv"></activity>
+        <activity android:name=".ColGameLv" />
+        <activity android:name=".SlideGameLv" />
     </application>
 
 </manifest>

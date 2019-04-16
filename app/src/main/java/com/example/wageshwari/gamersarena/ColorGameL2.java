@@ -34,7 +34,7 @@ SharedPreferences preferences;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_color_game_l2);
-      /*  countl2 = (TextView)findViewById(R.id.cgl2tvcount);
+        countl2 = (TextView)findViewById(R.id.cgl2tvcount);
         scorel2 = (TextView)findViewById(R.id.cgl2tvscore);
         colorl2 = (TextView)findViewById(R.id.cgl2tvcolor);
         blue = (Button)findViewById(R.id.cgl2butblue);
@@ -187,8 +187,7 @@ SharedPreferences preferences;
                 startGame(counl2);
                 startl2.setVisibility(View.INVISIBLE);
             }
-        });*/
-        Toast.makeText(getApplicationContext(),"hii",Toast.LENGTH_LONG).show();
+        });
     }
 
 
@@ -216,20 +215,29 @@ SharedPreferences preferences;
     public void startGame(int in){
         final int j = in;
         if(in == 26){
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    index = -100;
+                    // vibe=null;
+                    colorl2.setText("");
+                    //  start.setVisibility(View.VISIBLE);
+                    counl2=1;
+
             int score=preferences.getInt("scorel2",0);
             if(scrl2>=score){
                 SharedPreferences.Editor editor = preferences.edit();
                 editor.putInt("scorel2", scrl2); // value to store
                 editor.commit();
             }
-            if(scrl2>=10){
+            if(score>=20||scrl2>=20){
                  congratsivl2.setVisibility(View.VISIBLE);
                  restart.setVisibility(View.VISIBLE);
                  next.setVisibility(View.VISIBLE);
-            }
-            index = -100;
-            startl2.setVisibility(View.VISIBLE);
-            scrl2 = 0;
+            }else{ startl2.setVisibility(View.VISIBLE);}
+                }
+            }, 1000);
+
             return;
         }
         new Handler().postDelayed(new Runnable() {
@@ -244,4 +252,5 @@ SharedPreferences preferences;
             }
         }, 800);
     }
+
 }

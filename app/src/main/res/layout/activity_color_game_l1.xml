@@ -176,7 +176,6 @@
         android:id="@+id/congrats"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_marginBottom="220dp"
         android:visibility="gone"
